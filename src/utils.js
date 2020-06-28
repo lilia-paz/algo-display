@@ -2,16 +2,13 @@ import { useCallback } from "react";
 import { data } from "./data"; 
 
 // Return the filter method.
-function useFilter(value, search) {
+function useFilter(filterByStable) {
   return useCallback(
     function(data) {
-      var isSearchMatch = !search
-        ? true
-        : data.title.toLowerCase().indexOf(search) > -1;
-      var isFilterMatch = value === "all" ? true : data.color === value;
-      return isSearchMatch && isFilterMatch;
+      console.log(data.name, !filterByStable || data.stable);
+      return !filterByStable || data.stable;
     },
-    [value, search]
+    [filterByStable]
   );
 }
 

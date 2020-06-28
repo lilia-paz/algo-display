@@ -40,6 +40,13 @@ const Input = ({ onKeyUp }) => (
   </div>
 );
 
+const Checkbox = ({ onClick }) => (
+ <div className="control">
+   <input type="checkbox" id="filterStable" onChange={onClick} />
+  <label htmlFor="filterStable"> Stable </label>
+  </div>
+);
+
 // Button component.
 const Button = ({ onClick }) => (
   <button className="add-more-items btn btn-primary" onClick={onClick}>
@@ -63,4 +70,4 @@ const Demo = ({ children }) => (
   <section className="grid-demo">{children}</section>
 );
 
-export { Select, Header, Button, Input, Demo };
+export { Select, Header, Button, Input, Demo, Checkbox };

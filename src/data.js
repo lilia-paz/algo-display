@@ -9,7 +9,7 @@ const data = [
       "stable": true,
       "addedOn": "31 DEC 1999",
       "description": "Bubble Sort is the simplest sorting algorithm that works by repeatedly swapping the adjacent elements if they are in wrong order.",
-      "key": 0,
+      "index": 0,
     },
     {
       "name": "Insertion sort",
@@ -25,7 +25,7 @@ const data = [
       "stable": true,
       "addedOn": "01 JAN 2019",
       "description": "Insertion sort is a simple sorting algorithm that works the way we sort playing cards in our hands.",
-      "key": 1,
+      "index": 1,
     },
     {
       "name": "Pancake Sort",
@@ -36,7 +36,8 @@ const data = [
       "averagePerformance": "O(🥞)",
       "addedOn": "14 FEB 2020",
       "description": "Pancake sorting is the colloquial term for the mathematical problem of sorting a disordered stack of pancakes in order of size when a spatula can be inserted at any point in the stack and used to flip all pancakes above it.",
-      "key": 2,
+      "index": 2,
+      "stable": false,
     },
     {
       "name": "Timsort",
@@ -48,7 +49,7 @@ const data = [
       "stable": true,
       "addedOn": "01 FEB 2020",
       "description": "TimSort is a sorting algorithm based on Insertion Sort and Merge Sort. ",
-      "key": 3,
+      "index": 3,
     },
     {
       "name": "Tree Sort",
@@ -61,7 +62,8 @@ const data = [
       "averagePerformance": "O(n log n)",
       "addedOn": "01 JAN 1970",
       "description": "Tree sort is a sorting algorithm that is based on Binary Search Tree data structure.",
-      "key": 4,
+      "index": 4,
+      "stable": false,
     }
   ]
 
