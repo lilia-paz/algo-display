@@ -36,10 +36,7 @@
   padding-left: 40px;
   z-index: 1;
 }
-.cardImage img {
-  max-width: 100%;
-  object-fit: cover;
-}
+
 /* Grid */
 
 .grid {
@@ -592,7 +589,13 @@ section h4 {
 }
 
 .cardContainer {
-  height: 350px;
-  width: 350px;
+  height: 500px;
+  width: 500px;
   display: flex;
+}
+
+.cardImage img {
+  height: 100px;
+  width: 200px;
+  object-fit: cover;
 }

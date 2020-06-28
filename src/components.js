@@ -13,11 +13,11 @@ const Select = ({ values, onChange }) => {
       <select
         className="control-field filter-field form-control"
         onChange={onChange}
-        defaultValue={values[0]}
+        defaultValue={values[0][1]}
       >
-        {values.map((value, i) => (
-          <option key={i} value={value.toLowerCase()}>
-            {value}
+        {values.map((keyValue, i) => (
+          <option key={keyValue[0]} value={keyValue[1]}>
+            {keyValue[0]}
           </option>
         ))}
       </select>
@@ -52,7 +52,7 @@ const Button = ({ onClick }) => (
 const Header = ({ children }) => (
   <React.Fragment>
     <h2 className="section-title">
-      <span>Sorting Algorithmns</span>
+      <span>Sorting Algorithms</span>
     </h2>
     <div className="controls cf">{children}</div>
   </React.Fragment>

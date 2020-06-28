@@ -12,7 +12,7 @@ import { data } from "./data";
 function App() {
   // Sort state.
   const [sort, setSort] = useState({
-    value: "title"
+    value: "name"
   });
 
   // Filter state.
@@ -25,14 +25,17 @@ function App() {
   const filterFunction = useFilter(filter.value, filter.search);
 
   // Children.
-  const children = data.map(({ name, moreDetailsUrl, imageUrl, pros, cons, averagePerformance, stable, addedOn, description }) => (
+  const children = data.map(({ name, moreDetailsUrl, imageUrl, pros, cons, averagePerformance, stable, addedOn, description, key }) => (
     <Item
-      key={name}
+      key={key}
       name={name}
       moreDetailsUrl={moreDetailsUrl}
       imageUrl={imageUrl}
       pros={pros}
       cons={cons}
+      averagePerformance={averagePerformance}
+      addedOn={addedOn}
+      description={description}
     />
   ));
   console.log(children);
@@ -49,14 +52,18 @@ function App() {
           onChange={e => setFilter({ ...filter, value: e.target.value })}
         />
         <Select
-          values={["Title", "Color"]}
+          values={[
+            ["Default", "key"],
+            ["Name", "name"],
+            ["Added On", "addedOn"],
+          ]}
           onChange={e => setSort({ ...sort, value: e.target.value })}
         />
       </Header>
       {/* Content */}
       <MuuriComponent
         {...options}
-        propsToData={({ color, title }) => ({ color, title })}
+        propsToData={({ key, name, addedOn }) => ({ key, name, addedOn })}
         filter={filterFunction}
         sort={sort.value}
       >
@@ -95,9 +102,12 @@ const Item = ({ name, moreDetailsUrl, imageUrl, pros, cons, averagePerformance, 
         <a href={moreDetailsUrl} target="_blank">{name}</a> 
       </div>
       <div className="cardImage">
-        <img src="https://images.immediate.co.uk/production/volatile/sites/4/2018/07/GettyImages-175622118-5109db9.jpg?quality=90&resize=940,399" alt="bubble sort image"/>
+        <img src={imageUrl} alt="image"/>
       </div>
       <div className="cardContent">
+        {description}
+        {averagePerformance}
+        {addedOn}
         <ul>
           <li>{pros}</li>
           <li>{cons}</li>
@@ -117,7 +127,7 @@ export default App;
 2.5 - fix the css ✅
 3 - Add JSON data to app ✅
 4 - Create cards based on JSON data (unstructured) ✅
-5 - Render the image for the card
+5 - Render the image for the card ✅
 6 - Render links for each card ✅
-7 - Make sure images are same size
+7 - Make sure images are same size ✅
  */
