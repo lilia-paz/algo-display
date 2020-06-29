@@ -62,8 +62,4 @@ const Demo = ({ children }) => (
   <section className="grid-demo">{children}</section>
 );
 
-export { Select, Header, Button, Input, Demo, Checkbox };
-
-
-
-//cut out an
+export { Select, Header, Input, Demo, Checkbox };

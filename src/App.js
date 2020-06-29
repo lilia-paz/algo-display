@@ -69,22 +69,22 @@ function App() {
 };
 
 // Item component.
-const Item2 = ({ name, moreDetailsUrl, imageUrl, pros, cons, averagePerformance, stable, addedOn, description }) => {
-  return (
-    <div className={"item h2 w2"}>
-      <div className="item-content">
-        <div className="card">
-          <div className="card-title">
-            <a href={moreDetailsUrl} target="_blank">{name}</a> 
-          </div>
-          <div className="card-content">
-            {pros}, {cons}
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
+// const Item2 = ({ name, moreDetailsUrl, imageUrl, pros, cons, averagePerformance, stable, addedOn, description }) => {
+//   return (
+//     <div className={"item h2 w2"}>
+//       <div className="item-content">
+//         <div className="card">
+//           <div className="card-title">
+//             <a href={moreDetailsUrl} target="_blank">{name}</a> 
+//           </div>
+//           <div className="card-content">
+//             {pros}, {cons}
+//           </div>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
 
 const Item = ({ name, moreDetailsUrl, imageUrl, pros, cons, averagePerformance, stable, addedOn, description }) => {
   return (
