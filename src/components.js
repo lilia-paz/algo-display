@@ -43,16 +43,8 @@ const Input = ({ onKeyUp }) => (
 const Checkbox = ({ onClick }) => (
  <div className="control">
    <input type="checkbox" id="filterStable" onChange={onClick} />
-  <label htmlFor="filterStable"> Stable </label>
+  <label htmlFor="filterStable"> Only Show Stable </label>
   </div>
-);
-
-// Button component.
-const Button = ({ onClick }) => (
-  <button className="add-more-items btn btn-primary" onClick={onClick}>
-    <i className="material-icons">&#xE145;</i>
-    Add more items
-  </button>
 );
 
 // Header component.
@@ -71,3 +63,7 @@ const Demo = ({ children }) => (
 );
 
 export { Select, Header, Button, Input, Demo, Checkbox };
+
+
+
+//cut out an

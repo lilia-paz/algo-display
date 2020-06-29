@@ -3,31 +3,26 @@ import React, { useState, useCallback } from "react";
 import ReactDom from "react-dom";
 /* Muuri-react */
 import { MuuriComponent } from "muuri-react";
-/* Utils & components */
-import { useFilter, generateItems, options } from "./utils";
 import { Select, Header, Checkbox, Input, Demo } from "./components";
 import { data } from "./data";
 
 // App.
 function App() {
-  // Sort state.
+  // Sort state.y
   const [sort, setSort] = useState({
     value: "index"
   });
 
   // Filter state.
   const [filterByStable, setFilter] = useState(false);
-  console.log(filterByStable);
 
   // Filter method.
   const filterFunction = useCallback(
     function(data) {
-      console.log(data.name, !filterByStable || data.stable);
       return !filterByStable || data.stable;
     },
     [filterByStable]
   );
-  console.log(filterFunction);
 
   // Children.
   const children = data.map(({ name, moreDetailsUrl, imageUrl, pros, cons, averagePerformance, stable, addedOn, description, index }) => (
@@ -62,10 +57,10 @@ function App() {
       </Header>
       {/* Content */}
       <MuuriComponent
-        {...options}
         propsToData={({ index, name, addedOn, stable }) => ({ index, name, addedOn, stable })}
         filter={filterFunction}
         sort={sort.value}
+        forceSync={true}
       >
         {children}
       </MuuriComponent>
@@ -83,9 +78,6 @@ const Item2 = ({ name, moreDetailsUrl, imageUrl, pros, cons, averagePerformance,
             <a href={moreDetailsUrl} target="_blank">{name}</a> 
           </div>
           <div className="card-content">
-          
-            {/* image */}
-            {/* description */}
             {pros}, {cons}
           </div>
         </div>
@@ -99,18 +91,18 @@ const Item = ({ name, moreDetailsUrl, imageUrl, pros, cons, averagePerformance, 
     <div className="cardContainer">
      <div className="card">
      <div className="cardTitle">
-        <a href={moreDetailsUrl} target="_blank">{name}</a> 
+        <a href={moreDetailsUrl} target="_blank"> What is {name}?</a> 
       </div>
       <div className="cardImage">
-        <img src={imageUrl} alt="image"/>
+        <img src={imageUrl}/>
       </div>
       <div className="cardContent">
-        {description}
-        {averagePerformance}
-        {addedOn}
-        <ul>
-          <li>{pros}</li>
-          <li>{cons}</li>
+      <ul>
+        <li>{description}</li>
+        <li>{averagePerformance}</li>
+        <li>{addedOn}</li>
+        <li>{pros}</li>
+        <li>{cons}</li>
         </ul>
       </div>
      </div>
